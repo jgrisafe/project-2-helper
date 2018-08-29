@@ -24,7 +24,7 @@ describe("GET /api/examples", function() {
   it("should find all examples", function(done) {
     // Add some examples to the db to test with
 
-    
+
     db.Example.bulkCreate([
       { text: "First Example", description: "First Description" },
       { text: "Second Example", description: "Second Description" }
@@ -51,6 +51,9 @@ describe("GET /api/examples", function() {
         expect(responseBody[1])
           .to.be.an("object")
           .that.includes({ text: "Second Example", description: "Second Description" });
+
+        expect(responseBody[1]).to.be.an("boolean");
+        
 
         // The `done` function is used to end any asynchronous tests
         done();
