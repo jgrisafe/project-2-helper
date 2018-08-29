@@ -23,6 +23,8 @@ describe("GET /api/examples", function() {
 
   it("should find all examples", function(done) {
     // Add some examples to the db to test with
+
+    
     db.Example.bulkCreate([
       { text: "First Example", description: "First Description" },
       { text: "Second Example", description: "Second Description" }
